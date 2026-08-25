@@ -107,14 +107,14 @@ const eventData = [
 ];
 
 const agenda = [
-  ['DAY 01', '09:00', 'Doors open'],
-  ['DAY 01', '10:00', 'Hackathon begins'],
-  ['DAY 01', '11:00', 'CTF briefing'],
-  ['DAY 01', '13:00', 'Lunch break'],
-  ['DAY 01', '14:00', 'E-sports arena live'],
-  ['DAY 02', '10:00', 'Treasure Hunt launch'],
-  ['DAY 02', '11:00', 'Future skills workshop'],
-  ['DAY 02', '18:00', 'HackSprint begins']
+  { day: 'DAY 01', date: '12 OCT', time: '09:00', label: 'Doors open' },
+  { day: 'DAY 01', date: '12 OCT', time: '10:00', label: 'Hackathon begins' },
+  { day: 'DAY 01', date: '12 OCT', time: '11:00', label: 'CTF briefing' },
+  { day: 'DAY 01', date: '12 OCT', time: '13:00', label: 'Lunch break' },
+  { day: 'DAY 01', date: '12 OCT', time: '14:00', label: 'E-sports arena live' },
+  { day: 'DAY 02', date: '13 OCT', time: '10:00', label: 'Treasure Hunt launch' },
+  { day: 'DAY 02', date: '13 OCT', time: '11:00', label: 'Future skills workshop' },
+  { day: 'DAY 02', date: '13 OCT', time: '18:00', label: 'HackSprint begins' }
 ];
 
 const speakerData = [
@@ -317,12 +317,12 @@ function renderEventCards(filter = 'ALL') {
 
 function renderScheduleList() {
   scheduleList.innerHTML = agenda
-    .map(([day, time, label]) => `
+    .map(item => `
       <div class="schedule-item">
-        <span class="schedule-day">${day}</span>
-        <strong>${time}</strong>
-        <span>${label}</span>
-        <span>◷</span>
+        <span class="schedule-day">${item.day}<small>${item.date}</small></span>
+        <strong>${item.time}</strong>
+        <span>${item.label}</span>
+        <span class="schedule-marker" aria-hidden="true"></span>
       </div>
     `)
     .join('');
@@ -563,6 +563,9 @@ function renderMemberInputs() {
           Name
           <input
             required
+            minlength="2"
+            pattern="[A-Za-z][-A-Za-z .']{1,}"
+            title="Enter a valid name"
             name="memberName${index}"
             placeholder="Student full name"
           >
@@ -574,6 +577,9 @@ function renderMemberInputs() {
             Student ID
             <input
               required
+              minlength="2"
+              pattern="[A-Za-z0-9/-]{2,}"
+              title="Enter a valid student ID"
               name="memberId${index}"
               placeholder="GEHU ID"
             >
@@ -583,6 +589,9 @@ function renderMemberInputs() {
             Roll no
             <input
               required
+              minlength="2"
+              pattern="[A-Za-z0-9/-]{2,}"
+              title="Enter a valid roll number"
               name="memberRoll${index}"
               placeholder="University roll no"
             >
@@ -594,6 +603,9 @@ function renderMemberInputs() {
           Contact
           <input
             required
+            inputmode="numeric"
+            pattern="[6-9][0-9]{9}"
+            title="Enter a valid 10-digit mobile number"
             name="memberContact${index}"
             type="tel"
             placeholder="10-digit mobile number"
@@ -772,6 +784,23 @@ function showToast(message) {
   }, 3500);
 }
 
+function validateForm(form) {
+  const requiredFields = form.querySelectorAll('[required]');
+
+  requiredFields.forEach(field => {
+    field.setCustomValidity(
+      field.value.trim() ? '' : 'This field is required.'
+    );
+  });
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return false;
+  }
+
+  return true;
+}
+
 function updateRoleUI() {
   const profile = roleProfiles[currentRole];
 
@@ -879,6 +908,11 @@ function updateCountdown() {
           String(value).padStart(2, '0');
       }
     }
+  );
+
+  document.querySelector('.countdown')?.classList.toggle(
+    'complete',
+    remaining === 0
   );
 }
 
@@ -1067,6 +1101,9 @@ document
 
       event.preventDefault();
 
+      if (!validateForm(event.currentTarget)) {
+        return;
+      }
       const formData =
         new FormData(
           event.currentTarget
@@ -1141,6 +1178,9 @@ document
 
       event.preventDefault();
 
+      if (!validateForm(event.currentTarget)) {
+        return;
+      }
       const formData =
         new FormData(
           event.currentTarget
@@ -1333,6 +1373,9 @@ document
 
       event.preventDefault();
 
+      if (!validateForm(event.currentTarget)) {
+        return;
+      }
       const currentEvent =
         eventData.find(
           item =>

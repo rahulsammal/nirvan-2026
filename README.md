@@ -2,6 +2,76 @@
 
 Nirvan '26 is a responsive, framework-free event platform for GEHU's technical fest. The project focuses on three audience experiences: students who want to participate, visitors who want to explore the fest, and organisers who need to manage event information and registrations.
 
+## Project Objective
+
+The objective is to turn a technical-fest website into a useful event experience instead of a static information page. Nirvan '26 brings discovery, participation and event management into one interface:
+
+- Help students find the right event, understand its rules and register their complete team.
+- Help visitors understand the festival, explore its programme and find speakers, sponsors and venue details.
+- Help organisers present the fest professionally, keep event information updated and review registrations event by event.
+- Keep common information easy to scan through clear sections, filters, cards, modals and responsive layouts.
+
+The current project is a frontend prototype. Browser storage demonstrates the registration and organiser workflows without requiring a server or database.
+
+## Project Flow
+
+```mermaid
+flowchart TD
+		A[Open Nirvan '26] --> B{Select audience}
+		B -->|Student| C[Student Desk]
+		B -->|Visitor| D[Public Fest View]
+		B -->|Organiser| E[Organiser Login]
+		C --> C1[Discover events, rules and prizes]
+		C --> C2[Check schedule and venues]
+		C --> C3[Register team and member details]
+		D --> D1[Understand the fest]
+		D --> D2[Explore events and speakers]
+		D --> D3[View sponsors, gallery and venue]
+		E -->|Valid credentials| F[Organiser Menu]
+		E -->|Invalid credentials| E1[Show login error]
+		F --> F1[Edit event details]
+		F --> F2[View registered members by event]
+```
+
+## Registration and Management Flow
+
+```mermaid
+flowchart LR
+		A[Student selects event] --> B[Read team-size rule]
+		B --> C[Choose allowed member count]
+		C --> D[Fill leader details]
+		D --> E[Fill every member's name, ID, roll number and contact]
+		E --> F[Submit registration]
+		F --> G[(Browser storage)]
+		G --> H[Organiser selects event]
+		H --> I[View registered teams and member details]
+```
+
+## Information Architecture
+
+```mermaid
+mindmap
+	root((Nirvan '26))
+		Student
+			Events
+			Rules
+			Prizes
+			Schedule
+			Team registration
+		Visitor
+			Fest overview
+			Events
+			Speakers
+			Sponsors
+			Gallery
+			Venue and contact
+		Organiser
+			Login
+			Edit event details
+			Select event
+			Registered members
+```
+
 ## Role-Based Experience
 
 ### Student

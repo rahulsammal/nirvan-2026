@@ -63,13 +63,43 @@ Submitted registrations and organiser-edited event data are stored in `localStor
 
 ## Included Features
 
-- Responsive editorial-style festival interface.
-- Event category filters and detailed event modals.
-- Countdown to Nirvan '26.
-- Schedule, speakers, sponsors, venue and contact sections.
-- Categorised gallery with lightbox viewing.
-- Smooth headline, reveal and hover animations.
-- Reduced-motion support for accessibility.
+### Event Arena
+
+The Event Arena presents every Nirvan activity as a scannable event card. Each card includes the event category, short description, date, team-size rule, registration fee and prize. Category filters make it easy to find BUILD, SECURITY, PLAY, ADVENTURE or LEARN events.
+
+Selecting **View full details** opens a modal with the complete event description, date, time, venue, team requirement, fee, eligibility and event rules. The available action in this modal changes according to the selected role.
+
+### Countdown and Festival Information
+
+The hero section introduces Nirvan '26 with the festival dates, GEHU Dehradun venue, on-campus format and a live countdown to the opening time. The introductory section explains the purpose of the fest and highlights the number of arenas, days and total prize value.
+
+### Schedule
+
+The schedule section lists the festival rhythm in chronological order across both days. Each entry shows the day, time and activity so students and visitors can plan their visit quickly.
+
+### Speakers
+
+The speaker section introduces three professionals from innovation, cybersecurity and product design. Every speaker card includes the person's name, role, organisation, portrait and short biography.
+
+### Gallery and Lightbox
+
+The gallery is divided into event groups such as Hackathon, CTF, E-Sports and Treasure Hunt. Each group contains real event images with captions. Selecting an image opens a full-screen lightbox, which can be closed without leaving the page.
+
+### Sponsors and Partners
+
+The sponsors section establishes the fest's credibility by presenting title sponsors, gold sponsors and community partners in a structured sponsor wall.
+
+### Venue and Contact
+
+The contact section provides the GEHU Dehradun venue, email address and telephone number. Email and phone links can be opened directly from the interface.
+
+### Responsive Design
+
+The layout adapts to desktop and mobile screens. The navigation becomes a mobile menu, event cards and speaker cards switch to a single-column layout, gallery images reflow for smaller screens, and organiser/student panels remain usable on narrow viewports.
+
+### Motion and Accessibility
+
+The interface uses smooth headline reveals, poster entrance motion, subtle poster breathing effects, card hover transitions and toast notifications. The `prefers-reduced-motion` media query reduces or disables animation for users who request less motion.
 
 ## Tech Stack
 

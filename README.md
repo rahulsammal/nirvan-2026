@@ -191,6 +191,10 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Run In Browser
+
+Link : https://rahulsammal.github.io/nirvan-2026/
+
 ## GitHub Pages Deployment
 
 1. Create a public GitHub repository.

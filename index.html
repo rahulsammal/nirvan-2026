@@ -1,14 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#121313" />
-    <meta name="description" content="Nirvan '26, GEHU's technical festival for curious builders." />
-    <title>Nirvan '26 | Make future.</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121313">
+  <meta name="description" content="Nirvan '26, GEHU's technical festival for curious builders.">
+  <title>Nirvan '26 | Make future.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="navbar">
+      <a class="brand" href="#home" aria-label="Nirvan 26 home"><span class="brand-mark">N</span><span>NIRVAN</span><b>'26</b></a>
+      <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="#about">about</a><a href="#events">events</a><a href="#schedule">schedule</a><a href="#speakers">speakers</a><a href="#gallery">gallery</a><a href="#contact">contact</a>
+        <button class="nav-register" data-open-registration>Register <span>↗</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> GEHU / TECHNICAL FEST / 2026</p>
+          <h1>Make noise.<br><em>Make</em> <strong>future.</strong></h1>
+          <p class="hero-lede">Nirvan is a two-day collision of sharp minds, bold builds and joyful competition. Bring a question. Leave with a signal.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#events">Find your arena <span>↘</span></a><a class="text-link" href="#about">Why Nirvan <span>›</span></a></div>
+          <div class="hero-meta"><div><span>WHEN</span><b>12—13 OCT<br>2026</b></div><div><span>WHERE</span><b>GEHU<br>DEHRADUN</b></div><div><span>FORMAT</span><b>ON CAMPUS<br>IN PERSON</b></div></div>
+          <div class="countdown" aria-label="Countdown to Nirvan 26"><div><strong id="days">00</strong><span>days</span></div><div><strong id="hours">00</strong><span>hours</span></div><div><strong id="minutes">00</strong><span>minutes</span></div><div><strong id="seconds">00</strong><span>seconds</span></div></div>
+        </div>
+        <div class="hero-poster"><div class="poster-rings"><i></i><i></i><i></i></div><div class="poster-note">NRVN / 26<br><span>VOL. 01</span></div><div class="poster-core"><span>N</span><small>26</small></div><div class="poster-stamp">IDEAS<br>IN MOTION</div><div class="poster-index">01<br><span>04</span></div></div>
+      </section>
+      <div class="ticker"><span>BUILD</span><i></i><span>BREAK</span><i></i><span>PLAY</span><i></i><span>LEARN</span><i></i><span>REPEAT</span></div>
+
+      <section class="intro section-grid" id="about"><p class="section-kicker">01 / THE WHY</p><div><h2>A festival for the <em>curious.</em></h2><p class="body-copy">Nirvan '26 is where prototypes get real, teams find their rhythm and technology feels human again. One campus, five ways to make your mark.</p></div><div class="stat-row"><div><strong>05</strong><span>ARENAS</span></div><div><strong>02</strong><span>DAYS</span></div><div><strong>₹55K</strong><span>IN PRIZES</span></div></div></section>
+
+      <section class="events-section section-grid" id="events"><div class="section-heading"><div><p class="section-kicker">02 / EVENT ARENA</p><h2>Pick a <em>frequency.</em></h2></div><p class="section-aside">Different energy. Same invitation:<br>show up and make something.</p></div><div class="filter-row"><button class="filter active" data-filter="ALL">ALL</button><button class="filter" data-filter="BUILD">BUILD</button><button class="filter" data-filter="SECURITY">SECURITY</button><button class="filter" data-filter="PLAY">PLAY</button><button class="filter" data-filter="ADVENTURE">ADVENTURE</button><button class="filter" data-filter="LEARN">LEARN</button></div><div class="event-grid" id="eventGrid"></div></section>
+
+      <section class="schedule section-grid" id="schedule"><div><p class="section-kicker">03 / THE RHYTHM</p><h2>Two days.<br><em>Full signal.</em></h2></div><div class="schedule-list" id="scheduleList"></div></section>
+      <section class="speakers-section section-grid" id="speakers"><div class="section-heading"><div><p class="section-kicker">04 / SPEAKERS</p><h2>People with <em>signal.</em></h2></div><p class="section-aside">Three perspectives on building<br>what comes next.</p></div><div class="speaker-grid" id="speakerGrid"></div></section>
+      <section class="gallery-section section-grid" id="gallery"><div class="section-heading"><div><p class="section-kicker">05 / FIELD NOTES</p><h2>Seen at <em>Nirvan.</em></h2></div><p class="section-aside">A few frames from the energy<br>we are bringing back.</p></div><div class="gallery-groups" id="galleryGroups"></div></section>
+      <section class="sponsors-section section-grid" id="sponsors"><div class="section-heading"><div><p class="section-kicker">06 / SPONSORS</p><h2>Backed by <em>builders.</em></h2></div></div><div class="sponsor-wall"><div><span>TITLE SPONSORS</span><strong>TechCorp&nbsp; • &nbsp;Zeopto</strong></div><div><span>GOLD SPONSORS</span><strong>DevLabs&nbsp; • &nbsp;CloudNova&nbsp; • &nbsp;.xyz&nbsp; • &nbsp;lovable.Ai&nbsp; • &nbsp;HackNest</strong></div><div><span>COMMUNITY PARTNERS</span><strong>GitHub Community&nbsp; • &nbsp;GDG</strong></div></div></section>
+      <section class="contact-section section-grid" id="contact"><div><p class="section-kicker">07 / CONTACT + VENUE</p><h2>Find your way<br><em>here.</em></h2></div><div class="contact-list"><a href="mailto:nirvan@gehu.in">✉ <span>nirvan@gehu.in</span></a><a href="tel:+911256489632">◌ <span>+91 1256489632</span></a><span>⌖ <span>GEHU Campus, Dehradun</span></span></div></section>
+      <section class="register-band" id="register"><div><p class="section-kicker">08 / YOUR MOVE</p><h2>Bring the unfinished<br><em>thing.</em></h2></div><button class="button button-light" data-open-registration>Register for Nirvan <span>↗</span></button></section>
+    </main>
+    <footer><a class="brand" href="#home"><span class="brand-mark">N</span><span>NIRVAN</span><b>'26</b></a><span>Where ideas become inevitable.</span><span>© 2026 GEHU</span></footer>
+  </div>
+
+  <div class="modal-backdrop" id="eventModal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="eventTitle"><button class="modal-close" data-close-modal aria-label="Close event details">×</button><p class="section-kicker" id="eventType"></p><h2 id="eventTitle"></h2><p id="eventDescription"></p><div class="modal-facts" id="eventFacts"></div><div class="rules"><b>RULES</b><ul id="eventRules"></ul></div><button class="button button-dark" data-open-registration>Reserve a spot <span>↗</span></button></div></div>
+  <div class="modal-backdrop" id="registrationModal" hidden><form class="modal registration-modal" id="registrationForm"><button type="button" class="modal-close" data-close-modal aria-label="Close registration form">×</button><p class="section-kicker">NIRVAN '26 / REGISTRATION</p><h2>Save your <em>spot.</em></h2><p>Tell us who is joining the signal. This is a static registration preview for the fest.</p><label>Name<input required name="name" placeholder="Your full name"></label><label>Email<input required type="email" name="email" placeholder="you@example.com"></label><label>Choose an arena<select name="event" id="registrationEvent"></select></label><button class="button button-dark" type="submit">Submit registration <span>↗</span></button></form></div>
+  <div class="lightbox" id="lightbox" hidden><button class="modal-close" data-close-lightbox aria-label="Close gallery image">×</button><img id="lightboxImage" alt=""></div><div class="toast" id="toast" role="status" hidden>Registration interest noted. We will see you at Nirvan.</div>
+  <script src="script.js"></script>
+</body>
 </html>

@@ -1,10 +1,7 @@
 # Nirvan '26 Webathon
 
-A Vite + React microsite for GEHU's technical fest. Event content lives in `src/data/nirvan26-data.json`; supplied posters are served from `public/assets`.
+A framework-free HTML, CSS, and JavaScript microsite for GEHU's technical fest. It includes event filtering, detailed event modals, countdown, schedule, speakers, sponsor wall, contact details, registration form, and a categorized gallery lightbox.
 
 ## Run locally
 
-```bash
-npm install
-npm run dev
-```
+Open `index.html` directly in a browser, or serve the folder with any static HTTP server.
